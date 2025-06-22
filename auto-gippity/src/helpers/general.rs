@@ -16,6 +16,7 @@ const API_SCHEMA_PATH: &str =
 pub fn extend_ai_functions(ai_func: fn(&str) -> &'static str, func_input: &str) -> Message {
     let ai_function_str = ai_func(func_input);
 
+    //This is a function
     //Extend the string to encourage only printing the output
     let msg: String = format!(
         "FUNCTION {}
