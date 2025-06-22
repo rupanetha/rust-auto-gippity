@@ -1,3 +1,11 @@
+#[macro_export]
+macro_rules! get_fucntion_string {
+    ($func: ident) => {{
+        stringify!($func)
+    }};
+}
+
+#[macro_use]
 mod ai_functions;
 mod apis;
 mod helpers;
