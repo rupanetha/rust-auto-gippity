@@ -34,7 +34,7 @@ impl AgentSolutionArchitect {
         let ai_response: ProjectScope = ai_task_request_decoded::<ProjectScope>(
             msg_context, 
             &self.attributes.position, 
-            get_fucntion_string!(print_project_scope),
+            get_function_string!(print_project_scope),
             print_project_scope, 
         ).await;
 
@@ -49,7 +49,7 @@ impl AgentSolutionArchitect {
         let ai_response: Vec<String> = ai_task_request_decoded::<Vec<String>>(
             msg_context, 
             &self.attributes.position, 
-            get_fucntion_string!(print_site_urls),
+            get_function_string!(print_site_urls),
             print_site_urls, 
         ).await;
 
