@@ -5,7 +5,7 @@ use crate::models::agent_basic::basic_traits::BasicTraits;
 pub enum AgentState {
     Discovery,
     Working,
-    UnitTetsing,
+    UnitTesting,
     Finished
 }
 

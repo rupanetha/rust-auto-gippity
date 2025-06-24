@@ -8,7 +8,11 @@ use std::fs;
 const CODE_TEMPLATE_PATH: &str =
     "/Users/sairupa/Desktop/auto-gpt-root/web-server-template/src/code_template.rs";
 
-const EXEC_MAIN_PATH: &str = "/Users/sairupa/Desktop/auto-gpt-root/web-server-template/src/main.rs";
+pub const WEB_SERVER_PROJECT_PATH: &str = 
+"/Users/sairupa/Desktop/auto-gpt-root/web-server-template/";
+
+const EXEC_MAIN_PATH: &str = 
+"/Users/sairupa/Desktop/auto-gpt-root/web-server-template/src/main.rs";
 
 const API_SCHEMA_PATH: &str =
     "/Users/sairupa/Desktop/auto-gpt-root/auto-gippity/schemas/api_schema.json";
@@ -80,8 +84,14 @@ pub async fn check_status_code(client: &Client, url: &str) -> Result<u16, reqwes
 }
 
 //Get Code Template
-pub fn read_code_template_content() -> String {
+pub fn read_code_template_contents() -> String {
     let path: String = String::from(CODE_TEMPLATE_PATH);
+    fs::read_to_string(path).expect("Failed to read code template")
+}
+
+// Get Exec Main
+pub fn read_exec_main_contents() -> String {
+    let path: String = String::from(EXEC_MAIN_PATH);
     fs::read_to_string(path).expect("Failed to read code template")
 }
 

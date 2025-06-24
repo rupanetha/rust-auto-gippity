@@ -54,7 +54,7 @@ impl AgentSolutionArchitect {
         ).await;
 
         factsheet.external_urls = Some(ai_response);
-        self.attributes.state = AgentState::UnitTetsing;
+        self.attributes.state = AgentState::UnitTesting;
     }
 }
 
@@ -78,11 +78,11 @@ impl SpecialFunctions for AgentSolutionArchitect {
                     //Confirm if external urls
                     if project_scope.is_external_urls_required {
                         self.call_determine_external_urls(factsheet, factsheet.project_description.clone()).await;
-                        self.attributes.state = AgentState::UnitTetsing;
+                        self.attributes.state = AgentState::UnitTesting;
                     }
                 }
 
-                AgentState::UnitTetsing => {
+                AgentState::UnitTesting => {
 
                     let mut exclude_urls: Vec<String> = vec![];
 
